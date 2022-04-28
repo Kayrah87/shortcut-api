@@ -1,8 +1,21 @@
 {
   "name": "kayrah87/shortcut-api",
   "description": "A simple library for accessing the shortcut.com v3 API",
+  "authors": [
+    {
+      "name": "Kayleigh Whitehurst",
+      "email": "unconditional.evil@gmail.com",
+      "homepage": "https://www.whitehurstmedia.co.uk"
+    }
+  ],
+  "license": "MIT",
   "require": {
     "php": ">=7.4",
     "guzzlehttp/guzzle": "^7.4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kayrah87\\ShortcutApi\\": "src/"
+    }
   }
 }
