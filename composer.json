@@ -1,0 +1,8 @@
+{
+  "name": "kayrah87/shortcut-api",
+  "description": "A simple library for accessing the shortcut.com v3 API",
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.4.2"
+  }
+}
