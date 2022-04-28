@@ -15,8 +15,9 @@ class Shortcut
     }
 
     // make a guzzle request to shortcut.com with a token in the header
-    public function makeRequest($uri, $method = 'GET', $body = null)
+    public function makeRequest($location, $method = 'GET', $body = null)
     {
+        $uri = 'https://api.app.shortcut.com/api/v3/' . $location;
         $client = new Client();
         $response = $client->request($method, $uri, [
             'headers' => [
@@ -31,7 +32,7 @@ class Shortcut
     // get function that takes an object and an optional id and returns a getShortcut response
     public function get($object, $id = null)
     {
-        $uri = 'https://shortcut.com/api/v3/' . $object;
+        $uri = $object;
         if ($id) {
             $uri .= '/' . $id;
         }
@@ -42,7 +43,7 @@ class Shortcut
     // create function that takes an object and an optional id and returns a createShortcut response
     public function create($object, $body = null)
     {
-        $uri = 'https://shortcut.com/api/v3/' . $object;
+        $uri = $object;
 
         $response = $this->makeRequest($uri, 'POST', $body);
         return json_decode($response->getBody());
@@ -50,7 +51,7 @@ class Shortcut
 
     public function update($object, $id, $body = null)
     {
-        $uri = 'https://shortcut.com/api/v3/' . $object . '/' . $id;
+        $uri = $object . '/' . $id;
 
         $response = $this->makeRequest($uri, 'PUT', $body);
         return json_decode($response->getBody());
@@ -58,7 +59,7 @@ class Shortcut
 
     public function delete($object, $id)
     {
-        $uri = 'https://shortcut.com/api/v3/' . $object . '/' . $id;
+        $uri = $object . '/' . $id;
 
         $response = $this->makeRequest($uri, 'DELETE');
         return json_decode($response->getBody());
