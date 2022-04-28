@@ -1,6 +1,6 @@
 <?php
 
-namespace kayrah87\ShortcutApi;
+namespace kayrah87;
 
 use GuzzleHttp\Client;
 

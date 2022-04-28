@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Kayrah87\\ShortcutApi\\": "src/"
+      "Kayrah87\\": "src/"
     }
   }
 }
